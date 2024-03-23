@@ -28,7 +28,7 @@
                             <option value="Kasir">Kasir</option>
                             <option value="Admin">Admin</option>
                             <option value="Owner">Owner</option>
-                            <option value="waiter">waiter</option>
+                            <option value="Waiter">Waiter</option>
                         </select>
                     </div>
                 </div>

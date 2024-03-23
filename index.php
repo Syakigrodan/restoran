@@ -13,7 +13,9 @@ if (isset($_POST['login'])) {
         $_SESSION['username'] = $data['username'];
         $_SESSION['nama'] = $data['nama'];
         $_SESSION['level'] = $data['level'];
-        if ($data['level'] == "Kasir") {
+        if ($data['level'] == "waiter") {
+            $waiter = true;
+        } elseif ($data['level'] == "Kasir") {
             $kasir = true;
         } elseif ($data['level'] == "Manajer") {
             $manajer = true;
@@ -32,7 +34,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="public/logo.jpg">
-    <title>LOGIN</title>
+    <title>FORM LOGIN | Resto Bagus Alief</title>
     <link rel="shortcut icon" type="image/x-generic" href="public/logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/template/dist/assets/css/bootstrap.css">
@@ -52,35 +54,32 @@ if (isset($_POST['login'])) {
         <div class="row h-100">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
-                    <!--  <div class="auth-logo">
+                    <!-- <div class="auth-logo">
                         <a href=""><img src="assets/images/logo/logo.png" alt="Logo"></a>
                     </div> -->
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Restoran Five Star</p>
+                    <p class="auth-subtitle mb-5">Web Kasir Resto Bagus Alief</p>
 
                     <form method="post">
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" required="" autofocus=""
-                                name="username" placeholder="Username">
+                            <input type="text" class="form-control form-control-xl" required="" autofocus="" name="username" placeholder="Username">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" required="" name="password"
-                                placeholder="Password">
+                            <input type="password" class="form-control form-control-xl" required="" name="password" placeholder="Password">
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>
                         </div>
                         <div class="form-check form-check-lg d-flex align-items-end">
-                            <input class="form-check-input me-2" checked="" type="checkbox" value=""
-                                id="flexCheckDefault">
+                            <input class="form-check-input me-2" checked="" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label text-gray-600" for="flexCheckDefault">
-                                buat saya tetap masuk
+                                Keep me logged in
                             </label>
                         </div>
-                        <button name="login" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
+                        <button name="login" class="btn btn-success btn-block btn-lg shadow-lg mt-5">Log in</button>
                     </form>
                 </div>
             </div>
@@ -101,60 +100,60 @@ if (isset($_POST['login'])) {
 
 <script src="public/template/dist/assets/js/main.js"></script>
 <?php if (isset($manajer)) : ?>
-<script>
-Swal.fire({
-    title: 'Login Berhasil',
-    text: 'Hi, <?php echo $data['username'] ?>',
-    icon: 'success',
-    confirmButtonText: 'OK'
-}).then((result) => {
-    if (result.value) {
-        window.location = 'page/index.php?halaman=laporan/transaksi';
-    }
-})
-</script>
+    <script>
+        Swal.fire({
+            title: 'Login Berhasil',
+            text: 'Hi, <?php echo $data['username'] ?>',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.value) {
+                window.location = 'page/index.php?halaman=laporan/transaksi';
+            }
+        })
+    </script>
 <?php endif ?>
 <?php if (isset($kasir)) : ?>
-<script>
-Swal.fire({
-    title: 'Login Berhasil',
-    text: 'Hi, <?php echo $data['username'] ?>',
-    icon: 'success',
-    confirmButtonText: 'OK'
-}).then((result) => {
-    if (result.value) {
-        window.location = 'page/index.php?halaman=transaksi-pemesanan';
-    }
-})
-</script>
+    <script>
+        Swal.fire({
+            title: 'Login Berhasil',
+            text: 'Hi, <?php echo $data['username'] ?>',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.value) {
+                window.location = 'page/index.php?halaman=transaksi-pemesanan';
+            }
+        })
+    </script>
 <?php endif ?>
 <?php if (isset($admin)) : ?>
-<script>
-Swal.fire({
-    title: 'Login Berhasil',
-    text: 'Hi, <?php echo $data['username'] ?>',
-    icon: 'success',
-    confirmButtonText: 'OK'
-}).then((result) => {
-    if (result.value) {
-        window.location = 'page/index.php?halaman=data-user';
-    }
-})
-</script>
+    <script>
+        Swal.fire({
+            title: 'Login Berhasil',
+            text: 'Hi, <?php echo $data['username'] ?>',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.value) {
+                window.location = 'page/index.php?halaman=data-user';
+            }
+        })
+    </script>
 <?php endif ?>
 <?php if (isset($salah)) : ?>
-<script>
-Swal.fire({
-    title: 'Login Gagal',
-    text: 'Username dan Password tidak sesuai',
-    icon: 'error',
-    confirmButtonText: 'OK'
-}).then((result) => {
-    if (result.value) {
-        window.location = 'index.php';
-    }
-})
-</script>
+    <script>
+        Swal.fire({
+            title: 'Login Gagal',
+            text: 'Username dan Password tidak sesuai',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.value) {
+                window.location = 'index.php';
+            }
+        })
+    </script>
 <?php endif ?>
 
 </html>
