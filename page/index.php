@@ -13,7 +13,7 @@ require '../config/koneksi.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasir Resto - Resto Bagus Aliefya</title>
+    <title>Kasir Resto Syaki</title>
     <link rel="shortcut icon" type="image/x-generic" href="../public/logo.jpg">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -62,8 +62,8 @@ require '../config/koneksi.php';
                 <?php if ($_GET['halaman'] == "transaksi-pemesanan") : ?>
                     <?php include 'transaksi/index.php'; ?>
                 <?php endif ?>
-                <?php if ($_GET['halaman'] == "transaksi-order") : ?>
-                    <?php include 'transaksi/order.php'; ?>
+                <?php if ($_GET['halaman'] == "order-order") : ?>
+                    <?php include 'order/index.php'; ?>
                 <?php endif ?>
                 <?php if ($_GET['halaman'] == "transaksi-pemesanan/list-menu") : ?>
                     <?php include 'transaksi/menu.php'; ?>

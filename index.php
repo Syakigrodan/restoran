@@ -34,7 +34,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="public/logo.jpg">
-    <title>FORM LOGIN | Resto Bagus Alief</title>
+    <title>FORM LOGIN</title>
     <link rel="shortcut icon" type="image/x-generic" href="public/logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/template/dist/assets/css/bootstrap.css">
@@ -58,7 +58,7 @@ if (isset($_POST['login'])) {
                         <a href=""><img src="assets/images/logo/logo.png" alt="Logo"></a>
                     </div> -->
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Web Kasir Resto Bagus Alief</p>
+                    <p class="auth-subtitle mb-5">Web Kasir Resto Syaki</p>
 
                     <form method="post">
                         <div class="form-group position-relative has-icon-left mb-4">
@@ -108,7 +108,7 @@ if (isset($_POST['login'])) {
             confirmButtonText: 'OK'
         }).then((result) => {
             if (result.value) {
-                window.location = 'page/index.php?halaman=laporan/transaksi';
+                window.location = 'page/index.php?halaman=dashboard';
             }
         })
     </script>
@@ -122,7 +122,7 @@ if (isset($_POST['login'])) {
             confirmButtonText: 'OK'
         }).then((result) => {
             if (result.value) {
-                window.location = 'page/index.php?halaman=transaksi-pemesanan';
+                window.location = 'page/index.php?halaman=dashboard';
             }
         })
     </script>
@@ -136,7 +136,7 @@ if (isset($_POST['login'])) {
             confirmButtonText: 'OK'
         }).then((result) => {
             if (result.value) {
-                window.location = 'page/index.php?halaman=data-user';
+                window.location = 'page/index.php?halaman=dashboard';
             }
         })
     </script>
